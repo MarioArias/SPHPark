@@ -4,7 +4,7 @@ PHP support for Spark
 <?php
 
 $sc = new SPHParkContext();
-$text_file = $sc->text_file("hdfs://");
+$text_file = $sc->text_file("hdfs://...");
 $counts = $text_file->flat_map(function ($line) {
     return $line->split("");
 })->map(function ($word){
@@ -13,7 +13,9 @@ $counts = $text_file->flat_map(function ($line) {
     return $a + $b;
 });
 
-$counts->saveAs_TextFile("hdfs://");    
+$counts->saveAs_TextFile("hdfs://...");    
 ```
 
-# Happy April Fools' day
+# Gotcha
+
+Celebrating the week of April Fools
